@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:keepScreenOn="true">
+
+    <androidx.media3.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:show_buffering="when_playing"
+        app:use_controller="true" />
+
+    <TextView
+        android:id="@+id/tvAudioOverlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#AA111827"
+        android:padding="24dp"
+        android:text="🎵 Ses Dosyası Oynatılıyor"
+        android:textColor="#00E5FF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="top"
+        android:background="#CC0D1B2A"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+
+        <Button
+            android:id="@+id/btnToggleSidebar"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:backgroundTint="#1E293B"
+            android:text="☰ Liste / USB"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvNowPlaying"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="BYD Media Player - Hazır"
+            android:textColor="#E2E8F0"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="52dp"
+            android:layout_height="42dp"
+            android:backgroundTint="#1E293B"
+            android:text="⏮"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="52dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="6dp"
+            android:backgroundTint="#1E293B"
+            android:text="⏭"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnAspect"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#1E293B"
+            android:text="📐 Sığdır"
+            android:textAllCaps="false"
+            android:textColor="#00E5FF"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnAutoBoot"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#065F46"
+            android:text="🚗 Oto-Başlat: AÇIK"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sidebarContainer"
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:background="#EE0F172A"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnTabPlaylist"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#0284C7"
+                android:text="🎵 Çalma Listem"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnTabBrowser"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:backgroundTint="#334155"
+                android:text="📁 USB / Klasörler"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnActionLeft"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#1E293B"
+                android:text="➕ Klasördekileri Ekle"
+                android:textAllCaps="false"
+                android:textColor="#38BDF8"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnActionRight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:backgroundTint="#7F1D1D"
+                android:text="🗑️ Listeyi Temizle"
+                android:textAllCaps="false"
+                android:textColor="#FCA5A5"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvCurrentPath"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="4dp"
+            android:singleLine="true"
+            android:text="Aktif Çalma Listesi"
+            android:textColor="#94A3B8"
+            android:textSize="13sp" />
+
+        <ListView
+            android:id="@+id/listViewItems"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="#334155"
+            android:dividerHeight="1dp" />
+    </LinearLayout>
+</FrameLayout>
